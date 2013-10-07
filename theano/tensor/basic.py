@@ -2062,7 +2062,10 @@ def zeros_like(model, dtype=None):
 
 def zeros(shape, dtype=None):
     """
-    Create a Tensor filled with zeros, closer to Numpy's syntax than ``alloc``.
+    Create a Tensor filled with zeros. This function is closer to Numpy's
+    syntax than ``alloc``, but note one important difference: ``numpy.zeros``
+    accepts scalar arguments, but ``tensor.zeros`` does not. For example,
+    numpy.zeros([3]) or numpy.zeros(3) both work; only tensor.zeros([3]) works.
     """
     if dtype is None:
         dtype = config.floatX
@@ -2071,7 +2074,10 @@ def zeros(shape, dtype=None):
 
 def ones(shape, dtype=None):
     """
-    Create a Tensor filled with ones, closer to Numpy's syntax than ``alloc``.
+    Create a Tensor filled with ones. This function is closer to Numpy's
+    syntax than ``alloc``, but note one important difference: ``numpy.ones``
+    accepts scalar arguments, but ``tensor.ones`` does not. For example,
+    numpy.ones([3]) or numpy.ones(3) both work; only tensor.ones([3]) works.
     """
     if dtype is None:
         dtype = config.floatX
